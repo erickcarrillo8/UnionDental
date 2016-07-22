@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160721232306) do
+ActiveRecord::Schema.define(version: 20160721235805) do
 
   create_table "dentists", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -32,5 +32,26 @@ ActiveRecord::Schema.define(version: 20160721232306) do
 
   add_index "dentists", ["email"], name: "index_dentists_on_email", unique: true
   add_index "dentists", ["reset_password_token"], name: "index_dentists_on_reset_password_token", unique: true
+
+  create_table "diagnoses", force: :cascade do |t|
+    t.integer  "nopieza"
+    t.text     "diagnostico"
+    t.integer  "costo"
+    t.date     "fecha"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "patients", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.text     "direccion"
+    t.integer  "telefono"
+    t.integer  "celular"
+    t.string   "RFC"
+    t.date     "fecha_nac"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

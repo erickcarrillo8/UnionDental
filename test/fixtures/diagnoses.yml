@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nopieza: 1
+  diagnostico: 
+  costo: 1
+  fecha: 2016-07-21
+
+two:
+  nopieza: 1
+  diagnostico: 
+  costo: 1
+  fecha: 2016-07-21

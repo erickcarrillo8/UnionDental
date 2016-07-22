@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tratamiento: MyText
+  abono: 1.5
+  fecha: 2016-07-22 00:13:04
+
+two:
+  tratamiento: MyText
+  abono: 1.5
+  fecha: 2016-07-22 00:13:04

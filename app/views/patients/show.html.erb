@@ -1,0 +1,41 @@
+<h1><%= @pacientes.nombre %></h1>
+
+<%= @pacientes.apellido_pat %>
+<%= @pacientes.apellido_mat %>
+<%= @pacientes.direccion %>
+<%= @pacientes.telefono %>
+<%= @pacientes.celular %>
+<%= @pacientes.RFC %>
+<%= @pacientes.fecha_nac %>
+<%= @pacientes.religion %>
+<%= @pacientes.buen_estado_saludo %>
+<%= @pacientes.alergico_sustancia %>
+<%= @pacientes.problemas_anestesia %>
+<%= @pacientes.hemorragia %>
+<%= @pacientes.embarazo %>
+<%= @pacientes.diabates %>
+<%= @pacientes.hipertencion %>
+<%= @pacientes.fiebre_reumatica %>
+<%= @pacientes.asma %>
+<%= @pacientes.enfermades_respiratoras %>
+<%= @pacientes.enfermedades_cardiovasculares %>
+<%= @pacientes.dolor_boca %>
+<%= @pacientes.sangrado_encia %>
+<%= @pacientes.mal_olor_boca %>
+<%= @pacientes.dientes_moviles %>
+<%= @pacientes.dolor_abrir_cerrar_boca %>
+<%= @pacientes.malos_habitos %>
+<%= @pacientes.satisfecho %>
+<%= @pacientes.ultima_visita %>
+<%= @pacientes.tratamiento_adquirido %>
+<%= @pacientes.motivo_consulta %>
+<%= @pacientes.autorizacion %>
+
+<div>
+    <% paciente = @pacientes %>
+     <%=   link_to "Eliminar", paciente, method: :delete %>
+     <%= link_to"Editar", edit_patient_path(@pacientes)%>
+</div>
+
+
+     

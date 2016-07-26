@@ -3,7 +3,8 @@
     <div class="row">
         
     <% @pacientes.each do |paciente| %>
-        <h2><% link_to paciente.nombre , paciente %></h2>
+        <h2><%= link_to paciente.nombre , paciente %></h2>
+        <%= paciente.nombre %>
         <div>
             
         </div>

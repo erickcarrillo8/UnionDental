@@ -3,17 +3,7 @@
 one:
   nombre: MyString
   apellido: MyString
-  direccion: MyText
-  telefono: 1
-  celular: 1
-  RFC: MyString
-  fecha_nac: 2016-07-21
 
 two:
   nombre: MyString
   apellido: MyString
-  direccion: MyText
-  telefono: 1
-  celular: 1
-  RFC: MyString
-  fecha_nac: 2016-07-21

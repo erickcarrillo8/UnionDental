@@ -1,0 +1,91 @@
+<link href="http://cdn.datatables.net/1.10.6/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+ 
+<!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="http://www.yonkethecardepot.com/backup/assets/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="http://www.yonkethecardepot.com/backup/assets/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="http://www.yonkethecardepot.com/backup/assets/js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="http://www.yonkethecardepot.com/backup/assets/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  
+  
+
+
+<div class="container">
+          <div class="section">
+            <!--DataTables example-->
+            <div id="table-datatables">
+              <h1 class="header">Pacientes</h1>
+              <div class="row">
+               
+                <div class="col s12 m12 l12">
+                  <table id="data-table-simple" class="responsive-table display" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Appelido Paterno</th>
+                            <th>Appelido Materno</th>
+                            <th>Teléfono</th>
+                            <th>Celular</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                 
+                    <tfoot>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Appelido Paterno</th>
+                            <th>Appelido Materno</th>
+                            <th>Teléfono</th>
+                            <th>Celular</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                 
+                    <tbody>
+                        <% @pacientes.each do |paciente| %>
+                            <h2></h2>
+                            
+                            <tr>
+                                <td><%= paciente.nombre %></td>
+                                <td><%= paciente.apellido_pat %></td>
+                                <td><%= paciente.apellido_mat %></td>
+                                <td><%= paciente.telefono %></td>
+                                <td><%= paciente.celular %></td>
+                                <td><%= link_to "Ver pefil" , paciente %></td>
+                            </tr>
+                        <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div> 
+            <br>
+          
+          </div>
+
+        </div>
+        
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <%= link_to new_patient_path , class:"btn-floating btn-large red" do %>
+                <i class="large material-icons">add </a>
+            <% end %>
+         </div>
+        
+        
+       
+        
+   <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <!--prism-->
+    <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/prism.js"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!-- data-tables -->
+    <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/plugins/data-tables/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/plugins/data-tables/data-tables-script.js"></script>
+    <!-- chartist -->
+    <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/plugins/chartist-js/chartist.min.js"></script>   
+    
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/plugins.js"></script>    
+</body>
+
+

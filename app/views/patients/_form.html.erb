@@ -1,0 +1,158 @@
+<h1><%= name %> Paciente</h1>
+    <%= form_for(@paciente) do |f| %>
+        <%@paciente.errors.full_messages.each do |message| %>
+            <div>
+                <%= message %>
+            </div>
+            
+        <%end%>
+         
+
+
+
+       <div class=row>
+           <div class="col s4">
+               <%= f.text_field :nombre, placeholder:"Nombre" %> 
+           </div>
+           <div class="col s4">
+               <%= f.text_field :apellido_pat, placeholder:"Apellido Paterno" %>
+           </div>
+           <div class="col s4">
+               <%= f.text_field :apellido_mat, placeholder:"Apellido Materno" %>
+           </div>
+       </div>
+        <div class="row">
+            
+            <div class="col l6 m12 s 12">
+                <%= f.text_field :direccion, placeholder:"Dirección" %>
+                <%= f.text_field :telefono, placeholder:"Telefono" %>
+                <%= f.date_field :fecha_nac, class:"datepicker"%>
+            </div>
+            <div class="col l6 m12 s12">
+                <%= f.text_field :RFC, placeholder:"RFC" %>
+                <%= f.text_field :celular, placeholder:"Celular" %>
+                <%= f.text_field :religion, placeholder: "Religión"%>
+            </div>
+            
+        </div>
+        <div class="row">
+            
+            <div class="col l6 s12">
+                <h2>Historial Clinico</h2>
+                <p> 
+                <%= f.check_box :buen_estado_saludo, id:"test1"%>
+                <label for="test1">Se encuentra en buen estado de salud?</label>
+                </p>
+                <p>
+                <%= f.check_box :alergico_sustancia, id:"test2"%>
+                <label for="test2">Es alérgico a alguna sustancia o medicamento?</label>
+                </p>
+                <p>
+                <%= f.check_box :problemas_anestesia, id:"test3"%>
+                <label for="test3">Presenta problemas con anestesia local o general?</label>
+                </p>
+                <p>
+                <%= f.check_box :hemorragia, id:"test4"%>
+                <label for="test4">Padece hemorragias o sangrado?</label>
+                </p>
+                <p>
+                <%= f.check_box :embarazo, id:"test5"%>
+                <label for="test5">Está usted embarazada(Señoras)</label>
+                </p>
+                <p>
+                <%= f.check_box :diabates, id:"test6"%>
+                <label for="test6">Padece Diabetes Melitus?</label>
+                </p>
+                
+                <p>
+                <%= f.check_box :hipertencion, id:"test7"%>
+                <label for="test7">Padece Hipertensión Arterial?</label>
+                </p>
+                
+                <p>
+                <%= f.check_box :fiebre_reumatica, id:"test8"%>
+                <label for="test8">Padece Fiebre Reumática?</label>
+                </p>
+                
+                <p>
+                <%= f.check_box :asma, id:"test9"%>
+                <label for="test9">Padece Asma Bronquial?</label>
+                </p>
+                
+                <p>
+                <%= f.check_box :enfermades_respiratoras, id:"test10"%>
+                <label for="test10">Padece Enfermedades Respiratorias?</label>
+                </p>
+                
+                <p>
+                <%= f.check_box :enfermedades_cardiovasculares, id:"test11"%>
+                <label for="test11">Padece Enfermedades Cardiovasculares?</label>
+                </p>
+            </div>
+            
+            <div class="col l6 s12">
+                <h2>Historia Clínica Bucal y Dental</h2>
+                <%= f.check_box :dolor_boca, id:"test12"%>
+                <label for="test12">Molestia o dolor en la boca?</label>
+                </p>
+                <p>
+                <%= f.check_box :sangrado_encia, id:"test13"%>
+                <label for="test13">Le sangran fácilmente las encias?</label>
+                </p>
+                <p>
+                <%= f.check_box :mal_olor_boca, id:"test14"%>
+                <label for="test14">Mal olor o sabor de boca?</label>
+                </p>
+                <p>
+                <%= f.check_box :dientes_moviles, id:"test15"%>
+                <label for="test15">Siente sus dientes móviles, aprieta o rechica sus dientes?</label>
+                </p>
+                <p>
+                <%= f.check_box :dolor_abrir_cerrar_boca, id:"test16"%>
+                <label for="test16">Sufre de dolor al abrir o cerrar su boca?</label>
+                </p>
+                <p>
+                <%= f.check_box :malos_habitos, id:"test17"%>
+                <label for="test17">Malos hábitos Orofaciales (morder lápiz o uñas, chupar sus dedos, jugar con su lengua, etc.</label>
+                </p>
+                <p>
+                <%= f.check_box :satisfecho, id:"test18"%>
+                <label for="test18">Esta satisfecho con la apariencia de su boca?</label>
+                </p>
+                
+                
+            </div>
+     
+        </div>
+        
+        <div class="row">
+            <div class="col l12">
+               
+                <%= f.text_field :tratamiento_adquirido , placeholder:"Que tratamiento a adquirido?"  %>
+                 <%= f.text_field :motivo_consulta , placeholder:"Motivo de la consulta?"  %>
+                <p>
+                <%= f.check_box :autorizacion , id:"test19"%>
+                <label for="test19">Autorizo a la Dra " " para la toma de RX, administre anestesia local y tópica que sea necesario para realizar el tratamiento oficial</label>
+                </p>
+            </div>
+            
+        </div>
+        
+        
+        
+        
+        
+    
+    
+        
+         <%= f.submit "Guardar", class:"btn waves-effect waves-light" %>
+    <%end%>
+    
+    <script>
+        $( document ).ready(function() {
+        $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 3 // Creates a dropdown of 15 years to control year
+        });
+        });
+    </script>

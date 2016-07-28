@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722001653) do
+ActiveRecord::Schema.define(version: 20160722072044) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "fecha"
@@ -50,14 +50,38 @@ ActiveRecord::Schema.define(version: 20160722001653) do
 
   create_table "patients", force: :cascade do |t|
     t.string   "nombre"
-    t.string   "apellido"
+    t.string   "apellido_pat"
+    t.string   "apellido_mat"
     t.text     "direccion"
     t.integer  "telefono"
     t.integer  "celular"
     t.string   "RFC"
     t.date     "fecha_nac"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "religion"
+    t.boolean  "buen_estado_saludo"
+    t.boolean  "alergico_sustancia"
+    t.boolean  "problemas_anestesia"
+    t.boolean  "hemorragia"
+    t.boolean  "embarazo"
+    t.boolean  "diabates"
+    t.boolean  "hipertencion"
+    t.boolean  "fiebre_reumatica"
+    t.boolean  "asma"
+    t.boolean  "enfermades_respiratoras"
+    t.boolean  "enfermedades_cardiovasculares"
+    t.boolean  "dolor_boca"
+    t.boolean  "sangrado_encia"
+    t.boolean  "mal_olor_boca"
+    t.boolean  "dientes_moviles"
+    t.boolean  "dolor_abrir_cerrar_boca"
+    t.boolean  "malos_habitos"
+    t.boolean  "satisfecho"
+    t.date     "ultima_visita"
+    t.boolean  "tratamiento_adquirido"
+    t.boolean  "motivo_consulta"
+    t.boolean  "autorizacion"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "treatments", force: :cascade do |t|

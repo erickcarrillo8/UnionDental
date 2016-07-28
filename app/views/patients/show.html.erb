@@ -1,0 +1,117 @@
+<ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header active"><i class="material-icons">filter_drama</i>Datos del Paciente</div>
+      <div class="collapsible-body">
+          <div class="container">
+              <div class="row">
+                  <div class="col s12 m12 l12">
+                      
+                      <div id="profile-card" class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                          <img class="activator" src="http://www.leedervilledental.com.au/wp-content/uploads/2014/12/leederville-dental-slider-background-02-930x388.jpg" alt="user bg">
+                        </div>
+                        <div class="card-content">
+                          
+                            <%= link_to edit_patient_path , class:"btn-floating btn-large red btn-move-up waves-effect waves-light darken-2 right" do %>
+                                <i class="large material-icons">edit </i>
+                            <% end %>
+                        
+    
+                          <div class="col s12 m12 l12">
+                             <span class="card-title activator grey-text text-darken-4"><%= @pacientes.nombre %> <%= @pacientes.apellido_pat %> <%= @pacientes.apellido_mat %></span>
+                          </div>
+                          <div class="col s12 m12 l6">
+                            <p>Dirección: <%= @pacientes.direccion %></p>
+                            <p>Telefono: <%= @pacientes.telefono %></p>
+                            <p>Celular: <%= @pacientes.celular %></p>
+                            <p>RFC: <%= @pacientes.RFC %></p>
+                          </div>
+                          <div class="col s12 m12 l6">
+                              <p>Nacimiento: <%= @pacientes.fecha_nac %></p>
+                              <p>Religión <%= @pacientes.religion %></p>
+                              <p>Correo: yourmail@domain.com</p>
+                          </div>
+                         
+                        </div>
+                        <div class="card-reveal">
+                          <span class="card-title grey-text text-darken-4"><%= @pacientes.nombre %> <%= @pacientes.apellido_pat %> <%= @pacientes.apellido_mat %> <i class="mdi-navigation-close right"></i></span>
+                          <div class="row">
+                            <div class="col s12 m12 l6">
+                                <p>Dirección: <%= @pacientes.direccion %></p>
+                                <p>Telefono: <%= @pacientes.telefono %></p>
+                                <p>Celular: <%= @pacientes.celular %></p>
+                                <p>RFC: <%= @pacientes.RFC %></p>
+                            </div>
+                            <div class="col s12 m12 l6">
+                            <p>Nacimiento: <%= @pacientes.fecha_nac %></p>
+                            <p>Religión <%= @pacientes.religion %></p>
+                            <p>Correo: yourmail@domain.com</p>
+                            </div>
+                              
+                          </div>
+                          
+                        </div>
+                      </div>
+                </div>
+                  
+              </div>
+              
+          </div>
+            
+            
+            
+            <%= @pacientes.alergico_sustancia %>
+            <%= @pacientes.problemas_anestesia %>
+            <%= @pacientes.hemorragia %>
+            <%= @pacientes.embarazo %>
+            <%= @pacientes.diabates %>
+            <%= @pacientes.hipertencion %>
+            <%= @pacientes.fiebre_reumatica %>
+            <%= @pacientes.asma %>
+            <%= @pacientes.enfermades_respiratoras %>
+            <%= @pacientes.enfermedades_cardiovasculares %>
+            <%= @pacientes.dolor_boca %>
+            <%= @pacientes.sangrado_encia %>
+            <%= @pacientes.mal_olor_boca %>
+            <%= @pacientes.dientes_moviles %>
+            <%= @pacientes.dolor_abrir_cerrar_boca %>
+            <%= @pacientes.malos_habitos %>
+            <%= @pacientes.satisfecho %>
+            <%= @pacientes.ultima_visita %>
+            <%= @pacientes.tratamiento_adquirido %>
+            <%= @pacientes.motivo_consulta %>
+            <%= @pacientes.autorizacion %>
+            
+            <div>
+                <% paciente = @pacientes %>
+                 <%=   link_to "Eliminar", paciente, method: :delete %>
+                 <%= link_to"Editar", edit_patient_path(@pacientes)%>
+            </div>
+
+          
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Historia Clínica</div>
+      <div class="collapsible-body">
+          <div class="container">
+              
+              
+          </div>
+          
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Historia Clinica Bucal y Dental</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+     <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Diagnosticos</div>
+      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+    </li>
+  </ul>
+
+
+
+
+

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729073013) do
+ActiveRecord::Schema.define(version: 20160729073708) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "fecha"
@@ -100,11 +100,11 @@ ActiveRecord::Schema.define(version: 20160729073013) do
     t.datetime "updated_at",   null: false
     t.integer  "dentist_id"
     t.integer  "patient_id"
-    t.integer  "diagnoses_id"
+    t.integer  "diagnosis_id"
   end
 
   add_index "treatments", ["dentist_id"], name: "index_treatments_on_dentist_id"
-  add_index "treatments", ["diagnoses_id"], name: "index_treatments_on_diagnoses_id"
+  add_index "treatments", ["diagnosis_id"], name: "index_treatments_on_diagnosis_id"
   add_index "treatments", ["patient_id"], name: "index_treatments_on_patient_id"
 
 end

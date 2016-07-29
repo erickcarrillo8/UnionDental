@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729003859) do
+ActiveRecord::Schema.define(version: 20160729011356) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "fecha"
@@ -46,7 +46,12 @@ ActiveRecord::Schema.define(version: 20160729003859) do
     t.date     "fecha"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "dentist_id"
+    t.integer  "patient_id"
   end
+
+  add_index "diagnoses", ["dentist_id"], name: "index_diagnoses_on_dentist_id"
+  add_index "diagnoses", ["patient_id"], name: "index_diagnoses_on_patient_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "nombre"
@@ -91,8 +96,15 @@ ActiveRecord::Schema.define(version: 20160729003859) do
     t.text     "tratamiento"
     t.float    "abono"
     t.datetime "fecha"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "dentist_id"
+    t.integer  "patient_id"
+    t.integer  "diagnoses_id"
   end
+
+  add_index "treatments", ["dentist_id"], name: "index_treatments_on_dentist_id"
+  add_index "treatments", ["diagnoses_id"], name: "index_treatments_on_diagnoses_id"
+  add_index "treatments", ["patient_id"], name: "index_treatments_on_patient_id"
 
 end

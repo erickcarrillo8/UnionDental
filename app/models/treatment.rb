@@ -1,5 +1,5 @@
 class Treatment < ActiveRecord::Base
     belongs_to :dentist
     belongs_to :patient
-    belongs_to :diagnoses
+    belongs_to :diagnosis
 end

@@ -1,0 +1,35 @@
+<%= form_for([@pacientes,@diagnostico]) do |f| %>
+  <% if @diagnostico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@diagnostico.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @diagnostico.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= f.label :nopieza %><br>
+    <%= f.text_area :nopieza %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :costo %><br>
+    <%= f.text_area :costo %>
+  </div>
+   <div class="field">
+    <%= f.label :diagnostico %><br>
+    <%= f.text_area :diagnostico %>
+  </div>
+   <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.text_area :fecha %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

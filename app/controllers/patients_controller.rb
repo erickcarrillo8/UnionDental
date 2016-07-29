@@ -9,6 +9,7 @@ class PatientsController < ApplicationController
      #GET /pacientes/:id
     def show
         @pacientes = Patient.find(params[:id])
+        @diagnostico = Diagnosis.new
     end 
     
      #GET /pacientes/:nuevo

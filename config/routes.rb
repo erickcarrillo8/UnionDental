@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :dentists
-  resources :patients
-  
+  resources :patients do
+        resources :diagnosis
+  end
   
 =begin
    get "/pacientes" index

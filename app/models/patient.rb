@@ -1,8 +1,9 @@
 class Patient < ActiveRecord::Base
-    
-    validates :nombre , presence: true , length: { minimum: 30}
-    validates :apellido_mat , presence: true , length: { minimum: 30}
-    validates :direccion , presence: true , length: { minimum: 50}
+    belongs_to :dentist     
+    validates :nombre , presence: true 
+    validates :apellido_pat , presence: true 
+    validates :apellido_mat , presence: true 
+    validates :direccion , presence: true , length: { minimum: 10}
     validates :telefono, presence: true, length: {minimum:7}
     validates :celular, presence: true, length: {minimum:7}
     validates :RFC , presence: true, length: {minimum: 10  }

@@ -132,7 +132,7 @@
                  <%= f.text_field :motivo_consulta , placeholder:"Motivo de la consulta?"  %>
                 <p>
                 <%= f.check_box :autorizacion , id:"test19"%>
-                <label for="test19">Autorizo a la Dra " " para la toma de RX, administre anestesia local y tópica que sea necesario para realizar el tratamiento oficial</label>
+                <label for="test19">Autorizo al Dr  <%= current_dentist.name %> para la toma de RX, administre anestesia local y tópica que sea necesario para realizar el tratamiento oficial</label>
                 </p>
             </div>
             

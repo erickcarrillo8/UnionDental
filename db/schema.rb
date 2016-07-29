@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160722072044) do
+ActiveRecord::Schema.define(version: 20160729002113) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "fecha"
@@ -77,8 +77,8 @@ ActiveRecord::Schema.define(version: 20160722072044) do
     t.boolean  "malos_habitos"
     t.boolean  "satisfecho"
     t.date     "ultima_visita"
-    t.boolean  "tratamiento_adquirido"
-    t.boolean  "motivo_consulta"
+    t.string   "tratamiento_adquirido"
+    t.string   "motivo_consulta"
     t.boolean  "autorizacion"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false

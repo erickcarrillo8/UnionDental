@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :dentists
   resources :patients
+  
+  
 =begin
    get "/pacientes" index
    post "/pacientes" create

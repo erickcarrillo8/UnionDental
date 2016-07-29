@@ -10,7 +10,7 @@
     <link href="http://www.yonkethecardepot.com/backup/assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="http://www.yonkethecardepot.com/backup/assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
    
-    
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     
     <link href="http://www.yonkethecardepot.com/backup/assets/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -78,19 +78,12 @@
                             </div>
                             <div class="col col s8 m8 l8">
                                 <ul id="profile-dropdown" class="dropdown-content">
-                                    <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
-                                    </li>
-                                    <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
-                                    </li>
-                                    <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
-                                    </li>
-                                    <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                                    </li>
+                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
+                                    <li><%= link_to "Cerrar Sesion", destroy_dentist_session_path, method: :delete %> </li>
+                                    
+                                  
                                 </ul>
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Dentista<i class="material-icons right"><i class="material-icons">expand_more</i></i></i></a>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%= current_dentist.name %><i class="material-icons right"><i class="material-icons">expand_more</i></i></i></a>
                                 <p class="user-roal">Administrator</p>
                             </div>
                         </div>

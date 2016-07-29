@@ -1,6 +1,9 @@
 class PatientsController < ApplicationController
+    before_action :authenticate_dentist!
+    
     def index
          @pacientes = Patient.all
+          
     end
     
      #GET /pacientes/:id
@@ -14,11 +17,14 @@ class PatientsController < ApplicationController
     end
     
     def create 
-        @paciente = Patient.new(patient_params)
+        @paciente = current_dentist.patients.new(patient_params)
         
-        @paciente.save  
+        if @paciente.save 
+            redirect_to @paciente 
+        else
+            render :new 
+        end 
         
-        redirect_to @paciente
     end
     
     def edit

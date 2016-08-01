@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729073708) do
+ActiveRecord::Schema.define(version: 20160729061407) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "fecha"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20160729073708) do
   add_index "dentists", ["email"], name: "index_dentists_on_email", unique: true
   add_index "dentists", ["reset_password_token"], name: "index_dentists_on_reset_password_token", unique: true
 
-  create_table "diagnosis", force: :cascade do |t|
+  create_table "diagnoses", force: :cascade do |t|
     t.integer  "nopieza"
     t.text     "diagnostico"
     t.integer  "costo"
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160729073708) do
     t.integer  "patient_id"
   end
 
-  add_index "diagnosis", ["dentist_id"], name: "index_diagnosis_on_dentist_id"
-  add_index "diagnosis", ["patient_id"], name: "index_diagnosis_on_patient_id"
+  add_index "diagnoses", ["dentist_id"], name: "index_diagnoses_on_dentist_id"
+  add_index "diagnoses", ["patient_id"], name: "index_diagnoses_on_patient_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "nombre"
@@ -100,11 +100,11 @@ ActiveRecord::Schema.define(version: 20160729073708) do
     t.datetime "updated_at",   null: false
     t.integer  "dentist_id"
     t.integer  "patient_id"
-    t.integer  "diagnosis_id"
+    t.integer  "diagnoses_id"
   end
 
   add_index "treatments", ["dentist_id"], name: "index_treatments_on_dentist_id"
-  add_index "treatments", ["diagnosis_id"], name: "index_treatments_on_diagnosis_id"
+  add_index "treatments", ["diagnoses_id"], name: "index_treatments_on_diagnoses_id"
   add_index "treatments", ["patient_id"], name: "index_treatments_on_patient_id"
 
 end

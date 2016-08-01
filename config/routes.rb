@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :dentists
   resources :patients do
-        resources :diagnosis
+        resources :diagnoses
   end
   
 =begin

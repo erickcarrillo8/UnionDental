@@ -10,26 +10,45 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+    <div class="input-field col s12 l12">
+        <%= f.label :diagnostico %>
+        <%= f.text_area :diagnostico, class:"materialize-textarea" %>
+    </div>
+    
+</div>
+
+<div class="row"> 
+    <div class="input-field col s12 l2">
+        
+        <%= f.number_field :nopieza %>
+        <%= f.label :nopieza %>
+    
+    </div>   
+    
+    <div class="input-field col s12 l4">
+        <%= f.number_field :costo %>
+        <%= f.label :costo %>
+    </div>
+    <div class="input-field col s12 l2">
+        <%= f.date_field :fecha  , class:"datepicker"%>
+        <%= f.label :fecha %>
+    </div>
+    
+    <div class="input-field col s12 l4">
+        <input disabled value="<%= current_dentist.name %>" type="text" class="validate">
+        <label for="disabled">Firma</label>
+    </div>
+    
+</div>
+
+<div>
+     <div class="actions">
+        <%= f.submit "Guardar", class:"btn waves-effect waves-light" %>
+    </div>
+</div>
+    
 
   
-  <div class="field">
-    <%= f.label :nopieza %><br>
-    <%= f.text_area :nopieza %>
-  </div>
   
-   <div class="field">
-    <%= f.label :costo %><br>
-    <%= f.text_area :costo %>
-  </div>
-   <div class="field">
-    <%= f.label :diagnostico %><br>
-    <%= f.text_area :diagnostico %>
-  </div>
-   <div class="field">
-    <%= f.label :fecha %><br>
-    <%= f.text_area :fecha %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

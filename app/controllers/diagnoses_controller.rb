@@ -9,14 +9,14 @@ class DiagnosesController < ApplicationController
     end
     
     def create 
-        @diagnostico = current_dentist.diagnostico.new(diagnosis_params)
+        @diagnostico = current_dentist.diagnoses.new(diagnosis_params)
         @diagnostico.patient  = @paciente 
         
        
         if @diagnostico.save
             redirect_to @comment.article, notice: 'Diagnostico agregado correctamente'
         else
-            render :new 
+           
         end
         
     end
@@ -32,6 +32,6 @@ class DiagnosesController < ApplicationController
     end
     
     def diagnosis_params
-        params.require(:comment).permit(:dentist_id,:patient_id,:nopieza,:costo,:fecha,:diagnostico)
+        params.require(:diagnosis).permit(:dentist_id,:patient_id,:nopieza,:costo,:fecha,:diagnostico)
     end
 end

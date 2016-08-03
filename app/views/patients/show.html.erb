@@ -1,6 +1,6 @@
 <ul class="collapsible" data-collapsible="accordion">
     <li>
-      <div class="collapsible-header active"><i class="material-icons">filter_drama</i>Datos del Paciente</div>
+      <div class="collapsible-header "><i class="material-icons">filter_drama</i>Datos del Paciente</div>
       <div class="collapsible-body">
           <div class="container">
               <div class="row">
@@ -106,22 +106,38 @@
       <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
     </li>
      <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Diagnosticos</div>
+      <div class="collapsible-header active"><i class="material-icons">whatshot</i>Diagnosticos</div>
       <div class="collapsible-body">
-        <p>
-          <% @pacientes.diagnoses.each do |diagnostico| %>
-            
-                <%= diagnostico.nopieza %> 
-                <%= diagnostico.diagnostico %> 
-                <%= diagnostico.costo %> 
-                <%= diagnostico.fecha %>
-                <%= diagnostico.dentist.name %> 
-                <br>
-                
-            
-          <% end %>
+        <table class="striped">
+          <thead>
+            <tr>
+              <th>No pieza</th>
+              <th>Diagnostico</th>
+              <th>Costo</th>
+              <th>Saldo</th>
+              <th>Fecha</th>
+              <th>Firmado</th>
+              <th>Ver Tratamientos</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <% @pacientes.diagnoses.each do |diagnostico| %>
+              <tr>
+                <th><%= diagnostico.nopieza %> </th>
+                <th><%= diagnostico.diagnostico %></th>
+                <th><%= diagnostico.costo %></th>
+                <th><%= diagnostico.costo %></th>
+                <th><%= diagnostico.fecha %></th>
+                <th><%= diagnostico.dentist.name %> </th>
+                <th><a class="btn" href="#">Ver Tratamientos</a> </th>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+         
           
-        </p>
+        
       </div>
     </li>
   </ul>

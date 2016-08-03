@@ -22,7 +22,7 @@ class DiagnosesController < ApplicationController
         if @diagnostico.save
             redirect_to  @diagnostico.patient , notice: 'Diagnostico agregado correctamente'
         else
-           
+           redirect_to @diagnostico.patient , notice: 'Error al agregar el diagnostico'
         end
         
     end

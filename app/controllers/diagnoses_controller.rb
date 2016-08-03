@@ -1,6 +1,12 @@
 class DiagnosesController < ApplicationController
     before_action :authenticate_dentist!
+    before_action :set_patient
+    before_action :set_diagnosis , only: [:show, :edit, :update, :destroy]
     
+    
+    def index 
+        @diagnostico = Diagnosis.all 
+    end 
     def show
     end
     
@@ -9,12 +15,12 @@ class DiagnosesController < ApplicationController
     end
     
     def create 
+       
         @diagnostico = current_dentist.diagnoses.new(diagnosis_params)
         @diagnostico.patient  = @paciente 
-        
        
         if @diagnostico.save
-            redirect_to @comment.article, notice: 'Diagnostico agregado correctamente'
+            redirect_to  @diagnostico.patient , notice: 'Diagnostico agregado correctamente'
         else
            
         end

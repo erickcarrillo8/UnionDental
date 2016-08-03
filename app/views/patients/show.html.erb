@@ -109,6 +109,17 @@
       <div class="collapsible-header"><i class="material-icons">whatshot</i>Diagnosticos</div>
       <div class="collapsible-body">
         <p>
+          <% @pacientes.diagnoses.each do |diagnostico| %>
+            
+                <%= diagnostico.nopieza %> 
+                <%= diagnostico.diagnostico %> 
+                <%= diagnostico.costo %> 
+                <%= diagnostico.fecha %>
+                <%= diagnostico.dentist.name %> 
+                <br>
+                
+            
+          <% end %>
           
         </p>
       </div>
@@ -128,13 +139,10 @@
     <div class="modal-content">
       <h4>Nuevo Tratamiento</h4>
       <p>
-        <%=  render "diagnoses/form"%>
+        <%=  render "diagnoses/form" %>
       </p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
     </div>
   </div>
-
-
-

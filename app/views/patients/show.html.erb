@@ -130,7 +130,9 @@
                 <th><%= diagnostico.costo %></th>
                 <th><%= diagnostico.fecha %></th>
                 <th><%= diagnostico.dentist.name %> </th>
-                <th><a class="btn" href="#">Ver Tratamientos</a> </th>
+                <th><%= link_to "Ver Tratamientos" , treatments_path(:diagnoses_id => diagnostico.id )   %>
+                
+                </th>
               </tr>
             <% end %>
           </tbody>

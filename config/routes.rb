@@ -4,6 +4,10 @@ Rails.application.routes.draw do
         resources :diagnoses
   end
   
+  resources :treatments 
+  
+  
+  
 =begin
    get "/pacientes" index
    post "/pacientes" create

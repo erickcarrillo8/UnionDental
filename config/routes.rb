@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :dentists
   resources :patients do
-        resources :diagnoses
+        resources :diagnostics
   end
   
-  resources :treatments 
+  resources :diagnostics do 
+        resources :treatments
+    end 
   
   
   

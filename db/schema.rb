@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160729061407) do
+ActiveRecord::Schema.define(version: 20160811191542) do
 
   create_table "appointments", force: :cascade do |t|
     t.datetime "fecha"
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 20160729061407) do
   add_index "dentists", ["email"], name: "index_dentists_on_email", unique: true
   add_index "dentists", ["reset_password_token"], name: "index_dentists_on_reset_password_token", unique: true
 
-  create_table "diagnoses", force: :cascade do |t|
+  create_table "diagnostics", force: :cascade do |t|
     t.integer  "nopieza"
     t.text     "diagnostico"
-    t.integer  "costo"
+    t.float    "costo"
     t.date     "fecha"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 20160729061407) do
     t.integer  "patient_id"
   end
 
-  add_index "diagnoses", ["dentist_id"], name: "index_diagnoses_on_dentist_id"
-  add_index "diagnoses", ["patient_id"], name: "index_diagnoses_on_patient_id"
+  add_index "diagnostics", ["dentist_id"], name: "index_diagnostics_on_dentist_id"
+  add_index "diagnostics", ["patient_id"], name: "index_diagnostics_on_patient_id"
 
   create_table "patients", force: :cascade do |t|
     t.string   "nombre"
@@ -96,15 +96,15 @@ ActiveRecord::Schema.define(version: 20160729061407) do
     t.text     "tratamiento"
     t.float    "abono"
     t.datetime "fecha"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "dentist_id"
     t.integer  "patient_id"
-    t.integer  "diagnoses_id"
+    t.integer  "diagnostic_id"
   end
 
   add_index "treatments", ["dentist_id"], name: "index_treatments_on_dentist_id"
-  add_index "treatments", ["diagnoses_id"], name: "index_treatments_on_diagnoses_id"
+  add_index "treatments", ["diagnostic_id"], name: "index_treatments_on_diagnostic_id"
   add_index "treatments", ["patient_id"], name: "index_treatments_on_patient_id"
 
 end

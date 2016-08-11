@@ -1,6 +1,7 @@
 class Patient < ActiveRecord::Base
     belongs_to :dentist     
-    has_many :diagnoses
+    has_many :diagnostics
+    has_many :treatments
     validates :nombre , presence: true 
     validates :apellido_pat , presence: true 
     validates :apellido_mat , presence: true 

@@ -1,0 +1,57 @@
+
+<%= form_for([@diagnosticos, @tratamiento]) do |f| %>
+  <% if @tratamiento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tratamiento.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @tratamiento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+    <div class="input-field col s12 l12">
+        <%= f.label :fecha %>
+        <%= f.date_field :fecha, class:"datepicker" %>
+    </div>
+    
+</div>
+
+<div class="row"> 
+    <div class="input-field col s12 l2">
+        
+        <%= f.text_field :tratamiento %>
+        <%= f.label :tratamiento %>
+    
+    </div>   
+    
+    <div class="input-field col s12 l2">
+        <%= f.number_field :abono %>
+        <%= f.label :abono %>
+    </div>
+    
+    <div class="input-field col s12 l4">
+        <input disabled value="<%= current_dentist.name %>" type="text" class="validate">
+        <label for="disabled">Firma</label>
+    </div>
+    
+    <%= f.hidden_field :diagnostic_id , :value => @tratamiento.diagnostic_id %>
+    <%= f.hidden_field :patient_id , :value  => @tratamiento.patient_id %>
+    
+
+    
+    
+</div>
+
+<div>
+     <div class="actions">
+        <%= f.submit "Guardar", class:"btn waves-effect waves-light" %>
+    </div>  
+</div>
+    
+
+  
+  
+<% end %>

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col l12 s12">
-            <h1> <%= @tratamiento.patient.nombre  %> <%= @tratamiento.patient.apellido_pat  %> <%= @tratamiento.patient.apellido_mat  %> </h1>
+            <h1> <%= @diagnostico.patient.nombre  %> <%= @diagnostico.patient.apellido_pat  %> <%= @diagnostico.patient.apellido_mat  %> </h1>
         <table class="striped">
           <thead>
             <tr>
@@ -12,12 +12,13 @@
             </tr>
           </thead>
           <tbody>
-            <th><%= @tratamiento.fecha %></th>
-            <th><%= @tratamiento.tratamiento %></th>
-            <th><%= @tratamiento.abono %></th>
-            <th><%= @tratamiento.dentist.name %></th>
-                
-          
+            <% @diagnostico.treatments.each do |tratamiento| %>
+                <th><%= tratamiento.fecha %></th>
+                <th><%= tratamiento.tratamiento %></th>
+                <th><%= tratamiento.abono %></th>
+                <th><%= tratamiento.dentist.name %></th>
+            <% end %>
+              
            
             
           </tbody>
@@ -39,7 +40,7 @@
     <div class="modal-content">
       <h4>Nuevo Tratamiento</h4>
       <p>
-        <%= render "form"%>
+        <%= render "treatments/form" %>
       </p>
     </div>
     <div class="modal-footer">

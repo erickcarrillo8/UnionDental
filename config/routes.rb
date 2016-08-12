@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :diagnostics do 
         resources :treatments
     end 
+    
+    
+  resources :treatments
   
   
   

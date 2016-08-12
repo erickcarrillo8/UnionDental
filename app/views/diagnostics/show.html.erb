@@ -12,15 +12,16 @@
             </tr>
           </thead>
           <tbody>
+            
             <% @diagnostico.treatments.each do |tratamiento| %>
+              <tr>
                 <th><%= tratamiento.fecha %></th>
                 <th><%= tratamiento.tratamiento %></th>
                 <th><%= tratamiento.abono %></th>
                 <th><%= tratamiento.dentist.name %></th>
+              </tr>
             <% end %>
-              
-           
-            
+
           </tbody>
         </table> 
         </div>

@@ -12,19 +12,9 @@
     </div>
   <% end %>
 <div class="row">
-    <div class="input-field col s12 l12">
-        <%= f.label :fecha %>
-        <%= f.date_field :fecha, class:"datepicker" %>
-    </div>
-    
-</div>
-
-<div class="row"> 
-    <div class="input-field col s12 l2">
-        
+    <div class="input-field col s12 l10">
         <%= f.text_field :tratamiento %>
         <%= f.label :tratamiento %>
-    
     </div>   
     
     <div class="input-field col s12 l2">
@@ -32,13 +22,23 @@
         <%= f.label :abono %>
     </div>
     
+    
+</div>
+
+<div class="row"> 
+    
+    
+    <div class="input-field col s12 l4">
+        <%= f.label :fecha %>
+        <%= f.date_field :fecha, :value => Time.now.in_time_zone("Tijuana").to_date ,  class:"datepicker" %>
+    </div>
+    
     <div class="input-field col s12 l4">
         <input disabled value="<%= current_dentist.name %>" type="text" class="validate">
         <label for="disabled">Firma</label>
     </div>
     
-    <%= f.hidden_field :diagnostic_id , :value => @tratamiento.diagnostic_id %>
-    <%= f.hidden_field :patient_id , :value  => @tratamiento.patient_id %>
+    
     
 
     

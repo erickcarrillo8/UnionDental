@@ -1,4 +1,5 @@
 class TreatmentsController < ApplicationController
+    before_action :authenticate_dentist!
     before_action :set_diagnostic , only: [:create]
     before_action :set_treatment , only: [:edit , :update]
     def index

@@ -1,0 +1,24 @@
+<h1>Dentistas</h1>
+    <div class="row">
+        <div class="col s12 l12">
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @dentistas.each do |dentista| %>
+                    <tr>
+                        <td><%= dentista.name %></td>
+                        <td><%= dentista.email %></td>
+                        <td><%= link_to "Eliminar" , dentista , method: :delete %></td>
+                    </tr>
+                    <% end %>
+                </tbody>
+            </table>
+            
+        </div>        
+    </div>
+    

@@ -6,6 +6,8 @@
                     <tr>
                         <th>Nombre</th>
                         <th>E-mail</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -14,6 +16,7 @@
                         <td><%= dentista.name %></td>
                         <td><%= dentista.email %></td>
                         <td><%= link_to "Eliminar" , dentista , method: :delete %></td>
+                        <td> Editar </td>
                     </tr>
                     <% end %>
                 </tbody>

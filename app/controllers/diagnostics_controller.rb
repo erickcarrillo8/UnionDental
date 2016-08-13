@@ -41,5 +41,7 @@ class DiagnosticsController < ApplicationController
         @diagnostico = Diagnostic.find(params[:id])
     end
     
-    
+    def diagnostic_params
+        params.require(:diagnostic).permit(:dentist_id,:patient_id,:nopieza,:costo,:fecha,:diagnostico)
+    end
 end

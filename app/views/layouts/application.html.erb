@@ -39,21 +39,7 @@
             <nav class="cyan">
                 <div class="nav-wrapper">
                     <h1 class="logo-wrapper"><a href="index.html" class="brand-logo darken-1"><img src="http://www.clinicadentalunion.com/wp-content/uploads/2014/05/logo.png" style="height: 50px;" alt="union dental  logo"></a> <span class="logo-text">Materialize</span></h1>
-                    <ul class="right hide-on-med-and-down">
-                        <li class="search-out">
-                            <input type="text" class="search-out-text">
-                        </li>
-                        <li>    
-                            <a href="javascript:void(0);" class="waves-effect waves-block waves-light show-search"><i class="mdi-action-search"></i></a>                              
-                        </li>
-                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
-                        </li>
-                        <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light"><i class="mdi-social-notifications"></i></a>
-                        </li>
-                        <!-- Dropdown Trigger -->                        
-                        <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
-                        </li>
-                    </ul>
+                    
                 </div>
             </nav>
         </div>
@@ -78,21 +64,34 @@
                             </div>
                             <div class="col col s8 m8 l8">
                                 <ul id="profile-dropdown" class="dropdown-content">
-                                    <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a></li>
+                                        
                                     <li><%= link_to "Cerrar Sesion", destroy_dentist_session_path, method: :delete %> </li>
-                                    
-                                  
+                                   
                                 </ul>
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><%= current_dentist.name %><i class="material-icons right"><i class="material-icons">expand_more</i></i></i></a>
-                                <p class="user-roal">Administrator</p>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Dr <%= current_dentist.name %><i class="material-icons right"><i class="material-icons">expand_more</i></i></i></a>
+                                <p class="user-roal">Dentista</p>
                             </div>
                         </div>
                     </li>
-                    <li class="bold"><a href="index.html" class="waves-effect waves-cyan"><i class="material-icons">dashboard</i> Inicio</a>
+                    <li class="bold">
+                        <%= link_to root_path , class:"waves-effect waves-cyan" do %>
+                        
+                            <i class="material-icons">dashboard</i> Inicio
+                        
+                        <% end %>
                     </li>
-                    <li class="bold"><a href="app-email.html" class="waves-effect waves-cyan"><i class="material-icons">supervisor_account</i> Pacientes </a>
+                    <li class="bold">
+                   
+                    <%= link_to  patients_path , class:"waves-effect waves-cyan" do %> 
+                        <i class="material-icons">supervisor_account</i> 
+                        Pacientes
+                    <% end %>
+                    
                     </li>
-                    <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="material-icons">people_outline</i></i> Dentistas</a>
+                    <li class="bold">
+                        <%=  link_to dentists_path , class:"waves-effect waves-cyan" do  %>
+                            <i class="material-icons">people_outline</i></i> Dentistas
+                        <% end %>
                     </li>
                     
                                      
@@ -100,7 +99,7 @@
                     
                   
                 </ul>
-                <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2"><i class="mdi-navigation-menu" ></i></a>
+                <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only darken-2"><i class="material-icons">menu</i></a>
             </aside>
             <!-- END LEFT SIDEBAR NAV-->
 

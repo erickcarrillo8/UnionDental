@@ -9,6 +9,8 @@
               <th>Tratamiento</th>
               <th>Abono</th>
               <th>Firmado</th>
+              <th>Facturado</th>
+              <th>Imagen</th>
             </tr>
           </thead>
           <tbody>
@@ -19,6 +21,11 @@
                 <th><%= tratamiento.tratamiento %></th>
                 <th><%= tratamiento.abono %></th>
                 <th><%= tratamiento.dentist.name %></th>
+                <th> 
+                  <input type="checkbox" id="test<%= tratamiento.id %>" /> 
+                  <label for="test<%= tratamiento.id%>"></label>
+                </th>
+                <th></th>
               </tr>
             <% end %>
 

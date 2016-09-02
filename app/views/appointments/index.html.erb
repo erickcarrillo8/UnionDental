@@ -1,6 +1,14 @@
 <link href="http://www.yonkethecardepot.com/backup/assets/js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet" media="screen,projection">
 <script type="text/javascript" src="http://www.yonkethecardepot.com/backup/assets/js/plugins/fullcalendar/js/lang-all.js"></script>
 
+<style>
+		#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+
 <script>
 
 	$(document).ready(function() {
@@ -11,16 +19,20 @@
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay'
 			},
-			defaultDate: '2016-08-26',
+			defaultDate: '<%= Time.now.in_time_zone("Tijuana").to_date %>',
 			editable: false,
 			eventLimit: true, // allow "more" link when too many events
 			events: [
-				{
-					title: 'Cita Paciente Erick',
-					start: '2016-08-26T07:00:00',
-					end: '2016-08-26T07:40:00',
-					url: 'https://www.youtube.com/'
-				},
+				
+					<% @citas.each do |cita| %>
+						{	
+							title: 'Cita',
+							start: '<%= cita.fecha_inicio %>',
+							end: '<%= cita.fecha_final%>',
+							url: 'https://www.youtube.com/'
+						},
+					<% end %> 
+				
 				
 			]
 		});
@@ -29,16 +41,32 @@
 
 </script>
 
-<div id="full-calendar">              
+         
     <div class="row">
-        <div class="col s12 m12 l12">
-            <div id='calendar'></div>
+    	<div id="full-calendar">     
+	        <div class="col s12 m12 l12">
+	            <div id='calendar'></div>
+        	</div>
         </div>
     </div>
-</div>
 
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a class="btn-floating btn-large red modal-trigger" href="#modal1">
+            <i class="large material-icons">add </i>
+        </a>
+    </div>
 
-
+<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Nueva cita</h4>
+      <p>
+        <%= render 'form'%>
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Cerrar</a>
+    </div>
 
 
 
